@@ -2,11 +2,11 @@
 OF_DIR=~/src/of_v0.11.0_linux64gcc6_release/apps/myApps
 unzip $1;
 echo "done"
-dir=$(echo $1 | sed 's/.zip//g')
+dir=$(echo $1 | sed 's/.zip//g' | sed 's/ //g')
 echo "Unzipped to $dir"
 echo $OF_DIR
 #mkdir "$OF_DIR/$2"
-cp -r "$dir" "$OF_DIR/$2"
+cp -r "./$dir" "$OF_DIR/$2"
 cd "$OF_DIR/$2" && projectGenerator ../$2 && make -j8 Debug && make RunDebug
 #echo "saved to $OF_DIR/$2"
 
