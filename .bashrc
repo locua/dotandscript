@@ -55,18 +55,18 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-# old prompt    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
 if [ "$color_prompt" = yes ]; then
-    PS1=" \[$(tput bold)\]\[\033[38;5;45m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;87m\]λ\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]" 
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \W\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -88,11 +88,12 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alFh'
+alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias s='nnn'
-alias x='xdg-open'
+alias g='git'
+#alias python=python3
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -118,31 +119,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$(cat /etc/environment | tr -d \")
-export EDITOR=$(which emacsclient)
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export PATH=$PATH:/snap/bin
-export PATH=$PATH:/opt/bin
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:~/.fzF/bin
-
-
-
-# vim editing
 set -o vi
 
-#source ~/.profile
+#Virtualenvwrapper settings:
+export WORKON_HOME=$HOME/.virtualenvs
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+. /usr/local/bin/virtualenvwrapper.sh
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$PATH:/home/louca/src/dotandscript"
+export PATH="$PATH:/home/louca/src/dotandscript/pri"
+export PATH="$PATH:/home/louca/src/of_v0.11.0_linux64gcc6_release/projectGenerator-linux64"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+alias juce="cd ~/src/JUCE"
+alias setJUCE="cp -r ~/src/JUCE/emptyJUCEProject/.vscode ./"
 
-export FZF_DEFAULT_COMMAND='xdg-open $0'
+ssh-add ~/src/dotandscript/pri/backupserver1.pem >/dev/null 2>&1
+
+# if [ $(tty) == "/dev/tty1" ]; then
+# startx
+# fi

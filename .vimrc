@@ -1,10 +1,5 @@
-" Hey this is my vim config file woo "
-" **********************************
-" (o_o)
-"  oOo
-" **********************************
 
-set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+"set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab "set indent to four spaces.
 
@@ -16,7 +11,7 @@ let g:airline_powerline_fonts = 1
 "vnoremap <C-c> "+y
 "map <C-v> "+p
 
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 inoremap <Up> <Nop>
 noremap <Down> <Nop>

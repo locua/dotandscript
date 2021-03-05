@@ -1,8 +1,7 @@
-cp ~/.vimrc ~/dotandscript
-cp ~/.spacemacs ~/dotandscript
-cp ~/.tmux.conf ~/dotandscript
-cp ~/.local/bin/backupdotfiles.sh ~/dotandscript
-cp ~/.bashrc ~/dotandscript
+cp ~/.vimrc ~/src/dotandscript
+cp ~/.spacemacs ~/src/dotandscript
+cp ~/.tmux.conf ~/src/dotandscript
+cp ~/.bashrc ~/src/dotandscript
 
 
 

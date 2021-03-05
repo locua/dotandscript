@@ -1,0 +1,10 @@
+#!/bin/bash
+#cd .;
+#if test -f *.qbs;
+#then
+#    echo "ok"
+#else
+#    cd . && projectGenerator .
+#
+cd . && projectGenerator .
+make -j8 Debug && make RunDebug
