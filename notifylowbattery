@@ -5,5 +5,6 @@ if [ $x -le 7 ] ; then
 fi
 : '
   This is added to a cron and called every 5 minutes
-
+  crontab -e
+  */5 * * * * /path/to/some-script.sh
 '
