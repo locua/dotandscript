@@ -4,7 +4,7 @@ if [ $x -le 7 ] ; then
   notify-send "Battery is low $x% 😌 "
 fi
 : '
-  This is added to a cron and called every 5 minutes
-  crontab -e
-  */5 * * * * /path/to/some-script.sh
+  This is added crontab, called every 5 minutes:
+  $ crontab -e
+  " */5 * * * * /path/to/some-script.sh "
 '
