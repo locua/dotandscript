@@ -1,0 +1,3 @@
+echo "power on" | bluetoothctl
+echo "connect F5:05:B4:00:23:D4" | bluetoothctl
+
