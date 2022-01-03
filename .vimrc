@@ -25,3 +25,5 @@ set splitbelow splitright
 set number relativenumber
 
 "set ft=xxd
+
+let @d = ':r!date'
