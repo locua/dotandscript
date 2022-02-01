@@ -1,7 +1,7 @@
 
 "set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab "set indent to four spaces.
+set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab "set indent to four spaces.
 
 let g:airline#extensions#tabline#enabled = 1
 set guifont=Liberation\ Mono\ for\ Powerline\ 10 
