@@ -6,5 +6,6 @@
 #else
 #    cd . && projectGenerator .
 #
+# Compile an run openframeworks project.
 cd . && projectGenerator .
 make -j8 Debug && make RunDebug

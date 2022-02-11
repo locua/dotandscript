@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Common software I like
+sudo apt install emacs nnn vim tmux curl git tree syncthing cmus keepass2 transmission mpv entr libreoffice calibre audacity tlp tlp-rdw gimp fzf
+
+# snap install youtube-dl 
+
+### Common setup ###
+echo "set -o vi" >> .bashrc
+source ~/.bashrc
+
+# sudo systemctl enable syncthing@locua.service
+# sudo systemctl start syncthing@locua.service
+
+
