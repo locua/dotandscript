@@ -1,2 +1,2 @@
 #!/bin/bash
-if pgrep emacs -nw; then emacsclient -nw $@ ; else emacs ; fi
+if pgrep emacs || pgrep emacs -nw ; then emacsclient -nw $@ ; else emacs -nw; fi
