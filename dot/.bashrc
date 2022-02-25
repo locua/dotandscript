@@ -59,7 +59,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -91,9 +91,9 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias s='nnn'
-alias g='git'
-#alias python=python3
+alias f='xdg-open $(fzf)'
+alias em='emacs -nw'
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -119,27 +119,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 set -o vi
-
-#Virtualenvwrapper settings:
-export WORKON_HOME=$HOME/.virtualenvs
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-. /usr/local/bin/virtualenvwrapper.sh
-
-
-export PATH="$PATH:/home/louca/src/dotandscript"
-export PATH="$PATH:/home/louca/src/dotandscript/pri"
-export PATH="$PATH:/home/louca/src/of_v0.11.0_linux64gcc6_release/projectGenerator-linux64"
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-
-
-alias juce="cd ~/src/JUCE"
-alias setJUCE="cp -r ~/src/JUCE/emptyJUCEProject/.vscode ./"
-
-ssh-add ~/src/dotandscript/pri/backupserver1.pem >/dev/null 2>&1
-
-# if [ $(tty) == "/dev/tty1" ]; then
-# startx
-# fi
+export EDITOR='vim'
