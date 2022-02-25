@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 echo "Backing up scattered dotfiles to this folder"
 cp ~/.spacemacs ~/.vimrc ~/.bashrc ~/src/dotandscript/dot
-cd ~/src/dotandscript && git commit -am "latest" && and git push
+cd ~/src/dotandscript && git commit -am "latest" 
+git push
