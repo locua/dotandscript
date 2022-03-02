@@ -59,7 +59,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -82,6 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    alias s='nnn'
 fi
 
 # colored GCC warnings and errors
@@ -91,9 +92,9 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias f='xdg-open $(fzf)'
 alias em='emacs -nw'
-
+alias f='vim $(fzf)'
+alias gq='git commit -am "note" && git push'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -118,7 +119,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
 set -o vi
-export EDITOR='vim'
+
+export PATH="$PATH:~/.local/bin"
+
+
